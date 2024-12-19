@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHU-LMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Background */
+    body {
+      background: linear-gradient(to bottom, #f7f7f7, #ffffff);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Logo Animation */
+    .animate-logo {
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Header Scroll Transition */
+    .header-transition {
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* Sticky Header */
+    .sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header" class="header-transition header-light sticky flex justify-between items-center py-4 px-6">
+    <!-- Logo Section -->
+    <div class="flex items-center">
+      <img src="logo.png" alt="SHU Logo" class="w-10 h-10 mr-2">
+      <h1 class="text-2xl font-semibold">SHU Learning Management System</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="flex bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
+      
+      <!-- Left Panel: Graphics -->
+      <div class="w-1/2 bg-red-100 p-6 flex flex-col items-center justify-center text-gray-800 relative">
+        <img src="logo.png" alt="SHU Logo" class="w-32 h-32 mb-6 animate-logo">
+        <h1 class="text-3xl font-bold mb-4 text-center">Welcome to SHU LMS</h1>
+        <p class="text-gray-600 text-center">
+          Your personalized platform for efficient learning and course management.
+        </p>
+      </div>
+
+      <!-- Right Panel: Login Form -->
+      <div class="w-1/2 p-8 bg-white">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Login to Your Account</h2>
+        <form id="loginForm" class="space-y-4">
+          <!-- Username -->
+          <div>
+            <label for="username" class="text-gray-600">Username</label>
+            <input type="text" id="username" placeholder="Enter your username"
+              class="w-full mt-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+          </div>
+          <!-- Password -->
+          <div>
+            <label for="password" class="text-gray-600">Password</label>
+            <input type="password" id="password" placeholder="Enter your password"
+              class="w-full mt-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+          </div>
+          <!-- Remember Me -->
+          <div class="flex items-center">
+            <input type="checkbox" id="remember" class="mr-2">
+            <label for="remember" class="text-gray-600">Remember Username</label>
+          </div>
+          <!-- Login Button -->
+          <button type="button" onclick="login()" class="w-full px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600 transition">
+            Log in
+          </button>
+          <p id="errorMessage" class="text-red-500 text-sm hidden"></p>
+        </form>
+
+        <!-- Instructions Section -->
+        <div class="mt-8 text-gray-700 text-sm">
+          <h3 class="font-semibold mb-2">Is this your first time here?</h3>
+          <p>
+            <strong>Instructions (For Students):</strong><br>
+            Username: Your Student Number (e.g., F24CSC040)<br>
+            Email: <a href="mailto:example@shu.edu.pk" class="text-red-500">F24CSC040@shu.edu.pk</a>
+          </p>
+          <p class="mt-2">
+            <strong>Instructions (For Faculty):</strong><br>
+            Permanent Faculty Username: Use Email<br>
+            Visiting Faculty: Use CNIC No. (without dashes)
+          </p>
+          <p class="mt-2">
+            <strong>Instructions (For Password):</strong><br>
+            Use Password for login which was sent by the Admin Department
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- JavaScript File -->
+   <script src="script.js"></script>
+</body>
+</html>
